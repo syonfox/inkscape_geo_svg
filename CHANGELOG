@@ -1,3 +1,19 @@
+InkTrap Changelog
+
+15.06.2024
+
+Project changed to GeoSVG Inkscape Plugins
+
+- refactor so many things
+- add GeoSVG extention menu
+- add GeoSVG debug tools
+- add geosvg_lib for pythong helper functions
+- start plugin design process.
+- conceive idea of inktrap: draw constrained. a standardized approach to using svg
+    - also just a good pun
+
+
+
 Inkscape OUTPUT PRO Changelog
 ------------------
 

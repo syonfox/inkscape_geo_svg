@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inkscape-extension xmlns="http://www.inkscape.org/namespace/inkscape/extension">
+    <name>GeoSVG Show Versions</name>
+    <id>org.inkscape.sgol.pub.geosvg.showversions</id>
+    <effect>
+        <object-type>all</object-type>
+        <effects-menu>
+            <submenu name="GeoSVG">
+                <submenu name="Debug"/>
+            </submenu>
+        </effects-menu>
+    </effect>
+    <script>
+        <command location="extensions" interpreter="python">geosvg_debug_show_versions.py</command>
+    </script>
+</inkscape-extension>

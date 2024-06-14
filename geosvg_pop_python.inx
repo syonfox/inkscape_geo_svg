@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inkscape-extension xmlns="http://www.inkscape.org/namespace/inkscape/extension">
+<name>Python Shell Plugin</name>
+<id>org.inkscape.sgol.pub.geosvg.poppythong</id>
+<param name="text" type="description" _gui-text="This plugin opens a Python shell with the plugin context.">
+    Opens a Python shell with the plugin context.
+</param>
+<effect>
+    <object-type>all</object-type>
+    <effects-menu>
+        <submenu name="GeoSVG">
+            <submenu name="Debug"/>
+        </submenu>
+    </effects-menu>
+</effect>
+<script>
+    <command location="extensions" interpreter="python">geosvg_pop_python.py</command>
+</script>
+</inkscape-extension>

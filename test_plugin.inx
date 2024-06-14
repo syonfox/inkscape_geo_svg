@@ -1,0 +1,12 @@
+<inkscape-extension xmlns="http://www.inkscape.org/namespace/inkscape/extension">
+    <name>Syon Test Extension</name>
+    <id>org.inkscape.extension.test</id>
+    <effect>
+        <effects-menu>
+            <submenu name="Test"/>
+        </effects-menu>
+    </effect>
+    <script>
+        <command interpreter="python3" reldir="extensions">test_plugin.py</command>
+    </script>
+</inkscape-extension>

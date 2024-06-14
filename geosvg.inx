@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inkscape-extension xmlns="http://www.inkscape.org/namespace/inkscape/extension">
+  <name>Config GeoSVG Layer Feature</name>
+
+  <id>org.inkscape.sgol.pub.geosvg</id>
+  <dependency type="executable" location="extensions">geosvg.py</dependency>
+
+
+
+  <_param name="introduction" type="description">Config a GeoSVG</_param>
+<!--  <_param name="shortcut" type="string" default="Shift+Alt+F" hidden="false"/>-->
+
+  <param name="namespace" type="string" gui-text="XML Namespace URI">http://sgol.pub/geosvg</param>
+<!--  <![CDATA[-->
+<!--      XML namespaces are a way to avoid element name conflicts in XML documents.-->
+<!--      They allow you to differentiate elements or attributes with the same name-->
+<!--      that belong to different vocabularies or applications. Enter the URI of-->
+<!--      the namespace you want to add to the root tag of the SVG document.-->
+<!--      ]]>-->
+<!--</description>-->
+  <param name="prefix" type="string" gui-text="Namespace Prefix">geo</param>
+<!--  <description>-->
+<!--    <![CDATA[-->
+<!--      Namespace prefixes are short aliases used to reference XML namespaces.-->
+<!--      They are often used to make XML documents more readable and concise.-->
+<!--      Enter the prefix you want to associate with the namespace URI.-->
+<!--      ]]>-->
+<!--  </description>-->
+
+  <param name="name" type="string" _gui-text="Css Class to add to main svg">geosvg1</param>
+  <param name="title" type="string" _gui-text="A tooltip/title tag contents:">Click Me</param>
+  <param name="desc" type="string" appearance="multiline" _gui-text="The GeoJSON Feature to embed in this tag.">{type:"Feature"}</param>
+  <param name="clear_styles" type="boolean" _gui-text="clear inline styling">false</param>
+  <param name="browser_preview" type="bool" gui-text="Show Preview" default="false"/>
+
+  <effect needs-live-preview="false">
+    <object-type>all</object-type>
+    <menu-tip>GeoSVG Editor Tool (Under Development)</menu-tip>
+    <effects-menu>
+      <submenu _name="GeoSVG"/>
+    </effects-menu>
+  </effect>
+  <script>
+    <command reldir="extensions" interpreter="python">geosvg.py</command>
+  </script>
+</inkscape-extension>

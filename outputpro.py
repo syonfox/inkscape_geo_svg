@@ -1,7 +1,12 @@
 #!/usr/bin/env python3
+# gnu2
+
 
 import inkex, re, os, random, sys, subprocess, shutil
-from inkex.command import inkscape
+
+from geosvg_lib import inkexcmd
+
+inkscape = inkexcmd.inkscape
 
 from outputpro import cmyk, cutmarks
 
@@ -10,7 +15,32 @@ from PyQt5.QtWidgets import QMainWindow, QApplication
 from PyQt5.QtCore import *
 
 import gettext
+
 _ = gettext.gettext
+
+
+def _pythonpath():
+    for pth in os.environ.get("PYTHONPATH", "").split(":"):
+        if os.path.isdir(pth):
+            yield pth
+
+# [docs]
+def get_user_directory():
+    """Return the user directory where extensions are stored.
+
+    .. versionadded:: 1.1"""
+    if "INKSCAPE_PROFILE_DIR" in os.environ:
+        return os.path.abspath(
+            os.path.expanduser(
+                os.path.join(os.environ["INKSCAPE_PROFILE_DIR"], "extensions")
+            )
+        )
+
+    home = os.path.expanduser("~")
+    for pth in _pythonpath():
+        if pth.startswith(home):
+            return pth
+    return None
 
 import tempfile
 
@@ -36,11 +66,23 @@ def unittouu(string):
             pass
     return retval
 
+def dump_object(obj):
+    for attribute in dir(obj):
+        try:
+            value = getattr(obj, attribute)
+            print(f"{attribute}: {value}")
+        except AttributeError:
+            print(f"{attribute}: Attribute not accessible")
+
+
 class OutputProBitmap(inkex.EffectExtension):
-    
+    print("inkex dump:  ")
+    dump_object(inkex)
+
     def effect(self):
         try:
-            with open(os.path.join(os.path.abspath(inkex.utils.get_user_directory() + "/../"), "preferences.xml"), 'r') as f:
+            print("Hello, geo Svg")
+            with open(os.path.join(os.path.abspath(get_user_directory() + "/../"), "preferences.xml"), 'r') as f:
                 inkscape_config = f.read()
             
             list_of_export_formats = ['JPEG']

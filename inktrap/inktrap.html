@@ -1,0 +1,51 @@
+<html>
+<head>
+    <title>Inktrap</title>
+
+
+        <style>
+        body { font-family: Arial, sans-serif; background-color: #f4f4f4; margin: 0; padding: 20px; }
+        h2 { color: #4CAF50; }
+        input, textarea { width: 100%; padding: 8px; margin: 5px 0; border: 1px solid #ccc; border-radius: 4px; }
+        .inktrap-content { background: lightcoral; height: 300px; padding: 10px; border-radius: 4px; }
+        label { display: block; margin: 10px 0; }
+    </style>
+</head>
+
+<body>
+<h2>Welcome to GeoSVG InkTrap</h2>
+
+<p>send your data with eas. </p>
+
+
+<label>
+    Save Data Endpoint:
+    <input name="dest" value="https://freemap.online/api/free/inktrap">
+</label>
+<br>
+<label>
+    Free Map Purchase Email:
+    <input name="user" value="" placeholder="your@email">
+</label>
+<br>
+<label>File Name:
+    <input name="name" value="myGeoScalableVectorGraphic">
+</label>
+<br>
+<div class="inktrap-content" style="background: lightcoral; height:300px">Svg Sample Render Here</div>
+<br>
+<label>
+    Description:
+    <textarea name="desc"></textarea>
+</label>
+<label>
+    Metadata:
+    <textarea name="meta"></textarea>
+</label>
+<p>What is this page. A way fo you to preview and send your svgs to freemap. We do this by
+    using your browser to securely transmit data to CloudFlare. Where the data ins
+    encrypted with aes256 at rest.
+    We then catalog it and add it to you user profile
+</p>
+</body>
+</html>

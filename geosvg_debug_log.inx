@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inkscape-extension xmlns="http://www.inkscape.org/namespace/inkscape/extension">
+    <name>GeoSVG Inkscape Dump Context</name>
+    <id>org.inkscape.sgol.pub.geosvg.dumpcontext</id>
+    <effect>
+        <object-type>all</object-type>
+        <effects-menu>
+            <submenu name="GeoSVG">
+                <submenu name="Debug"/>
+            </submenu>
+        </effects-menu>
+    </effect>
+    <script>
+        <command location="inx" interpreter="python">geosvg_debug_log.py</command>
+    </script>
+</inkscape-extension>
