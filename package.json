@@ -1,0 +1,20 @@
+{
+  "name": "inkscape_geo_svg",
+  "version": "1.0.0",
+  "description": "An extension to export print-ready documents from Inkscape",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "echo \"Error: no build specified\" && exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/syonfox/inkscape_geo_svg.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/syonfox/inkscape_geo_svg/issues"
+  },
+  "homepage": "https://github.com/syonfox/inkscape_geo_svg#readme"
+}
