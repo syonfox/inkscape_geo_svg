@@ -1,0 +1,26 @@
+@font-face {
+    font-family: 'ComicMonoBold';
+    src: url('fonts/ComicMono-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'ComicMono';
+    src: url('fonts/ComicMono.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'SundayMango';
+    src: url('fonts/Sunday-Mango.ttf') format('truetype');
+}
+
+.comic-mono-bold {
+    font-family: 'ComicMonoBold';
+}
+
+.comic-mono {
+    font-family: 'ComicMono';
+}
+
+.sunday-mango {
+    font-family: 'SundayMango';
+}

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Font Demo</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .font-demo {
+            margin-bottom: 20px;
+        }
+
+        #customTextInput {
+            width: 96%;
+            padding: 10px;
+            margin-top: 20px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+<h1>Font Demo</h1>
+
+<div class="font-demo comic-mono-bold">
+    <h2>ComicMono Bold</h2>
+    <p class="demo-text">The quick brown fox jumps over the lazy dog.</p>
+</div>
+
+<div class="font-demo comic-mono">
+    <h2>ComicMono</h2>
+    <p class="demo-text">The quick brown fox jumps over the lazy dog.</p>
+</div>
+
+<div class="font-demo sunday-mango">
+    <h2>Sunday Mango</h2>
+    <p class="demo-text">The quick brown fox jumps over the lazy dog.</p>
+</div>
+
+<div>
+    <h2>Custom Text Input</h2>
+    <textarea rows=3 id="customTextInput" placeholder="Type your custom text here...">
+    </textarea>
+    <button id="pirate-ipsum">Pirate Ipsum</button>
+</div>
+
+<script>
+    customTextInput = document.getElementById('customTextInput')
+    pirateIpsumButton = document.getElementById('pirate-ipsum')
+
+    function updateDemo() {
+        var customText = customTextInput.value;
+        var demoTexts = document.querySelectorAll('.demo-text');
+        demoTexts.forEach(function (p) {
+            p.textContent = customText || 'The quick brown fox jumps over the lazy dog.';
+        });
+    }
+
+    customTextInput.addEventListener('input', updateDemo);
+    pirateIpsumButton.addEventListener('click', function () {
+        customTextInput.value = generatePirateIpsum(69)
+        updateDemo()
+    });
+
+
+    const pirateWords = [
+        'Ahoy', 'Matey', 'Yo-ho-ho', 'Shiver me timbers', 'Avast', 'Scallywag',
+        'Buccaneer', 'Jolly Roger', 'Landlubber', 'Parley', 'Plunder', 'Hornswaggle',
+        'Seadog', 'Swashbuckler', 'Barnacle', 'Grog', 'Davy Jones\' locker', 'Broadside',
+        'Marooned', 'Mutiny', 'Privateer', 'Crow\'s nest', 'Heave ho', 'Keelhaul',
+        'Sail ho', 'Spyglass', 'Sea legs', 'Black spot', 'Cutlass', 'Dead men tell no tales'
+    ];
+
+    function generatePirateIpsum(n=10) {
+        let ipsum = '';
+        for (let i = 0; i < n; i++) {
+            ipsum += pirateWords[Math.floor(Math.random() * pirateWords.length)] + ' ';
+            ipsum += pirateWords[Math.floor(Math.random() * pirateWords.length)] + ', ';
+            ipsum += pirateWords[Math.floor(Math.random() * pirateWords.length)] + '! ';
+        }
+       return ipsum;
+    }
+</script>
+</body>
+</html>
